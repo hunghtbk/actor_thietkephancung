@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetC13_2 Pin=IC2-2
+Removed Pin From Net: NetName=NetC18_1 Pin=IC2-3
+Removed Pin From Net: NetName=NetC19_1 Pin=IC2-5
+Removed Pin From Net: NetName=NetC10_1 Pin=IC2-6
+Added Pin To Net: NetName=NetC18_1 Pin=IC2-2
+Added Pin To Net: NetName=NetC13_2 Pin=IC2-3
+Added Pin To Net: NetName=NetC10_1 Pin=IC2-5
+Added Pin To Net: NetName=NetC19_1 Pin=IC2-6

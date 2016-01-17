@@ -1,0 +1,564 @@
+CCS PCM C Compiler, Version 4.107, 42851               10-Dec-12 18:39
+
+               Filename: D:\data\lab\Motion-detection\Code_PW\Microwave.lst
+
+               ROM used: 384 words (9%)
+                         Largest free fragment is 2048
+               RAM used: 19 (7%) at main() level
+                         22 (9%) worst case
+               Stack:    3 worst case (1 in main + 2 for interrupts)
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   119
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  25
+0008:  MOVF   7F,W
+0009:  MOVWF  24
+000A:  MOVF   0A,W
+000B:  MOVWF  2B
+000C:  CLRF   0A
+000D:  SWAPF  24,F
+000E:  MOVF   04,W
+000F:  MOVWF  26
+0010:  MOVF   20,W
+0011:  MOVWF  27
+0012:  MOVF   21,W
+0013:  MOVWF  28
+0014:  MOVF   22,W
+0015:  MOVWF  29
+0016:  MOVF   23,W
+0017:  MOVWF  2A
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.4
+001B:  GOTO   01E
+001C:  BTFSC  0B.1
+001D:  GOTO   039
+001E:  MOVLW  8C
+001F:  MOVWF  04
+0020:  BTFSS  00.5
+0021:  GOTO   024
+0022:  BTFSC  0C.5
+0023:  GOTO   03B
+0024:  BTFSS  0B.5
+0025:  GOTO   028
+0026:  BTFSC  0B.2
+0027:  GOTO   03D
+0028:  MOVF   26,W
+0029:  MOVWF  04
+002A:  MOVF   27,W
+002B:  MOVWF  20
+002C:  MOVF   28,W
+002D:  MOVWF  21
+002E:  MOVF   29,W
+002F:  MOVWF  22
+0030:  MOVF   2A,W
+0031:  MOVWF  23
+0032:  MOVF   2B,W
+0033:  MOVWF  0A
+0034:  SWAPF  25,W
+0035:  MOVWF  03
+0036:  SWAPF  7F,F
+0037:  SWAPF  7F,W
+0038:  RETFIE
+0039:  BCF    0A.3
+003A:  GOTO   047
+003B:  BCF    0A.3
+003C:  GOTO   0AF
+003D:  BCF    0A.3
+003E:  GOTO   076
+.................... //--------------------------------------------------------- 
+.................... // date created:07/11/2012 
+.................... // Update: 
+.................... // 8/11/2012: chuyen code CW sang PW 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // 
+.................... // author : Nguyen Hung 
+.................... // mcu:PIC16f688 
+.................... // clock:8Mhz 
+.................... // descrip:Use with microwave_boad 
+.................... //---------------------------------------------------------- 
+....................  
+.................... #include <Microwave.h> 
+.................... #include <16F688.h> 
+.................... //////// Standard Header file for the PIC16F688 device //////////////// 
+.................... #device PIC16F688 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES MCLR                     //Master Clear pin enabled 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES IESO                     //Internal External Switch Over mode enabled 
+.................... #FUSES FCMEN                    //Fail-safe clock monitor enabled 
+....................  
+.................... #use delay(clock=8000000) 
+.................... #use rs232(baud=19200,parity=N,xmit=PIN_C4,rcv=PIN_C5,bits=8) 
+....................  
+.................... //#use rs232(baud=19200,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1) 
+....................  
+.................... //.........Defined........................................ 
+.................... //--------------------------------------------------------- 
+.................... #define MAX_PULSE_WIDTH 12500    //200Hz 
+.................... #define MIN_PULSE_WIDTH 1250     //200Hz 
+.................... #define FILTER_VALUE    9 
+.................... #define PULSE_ACTIVE    20     // active pulse = 32.7 x PULSE_ACTIVE 
+.................... #define PULSE_OFF       40     // off pulse = 32.7 x PULSE_OFF - active pulse 
+....................  
+....................  
+.................... #BYTE PORTA = 0x05 
+.................... #BIT RA0 = 0x05.0 
+.................... #BIT RA1 = 0x05.1 
+.................... #BIT RA2 = 0x05.2 
+....................  
+.................... #BYTE PORTC = 0x07 
+.................... #BIT RC0 = 0x07.0 
+.................... #BIT RC1 = 0x07.1 
+.................... #BIT RC2 = 0x07.2 
+.................... #BIT RC3 = 0x07.3 
+.................... #BIT RC4 = 0x07.4 
+.................... #BIT RC5 = 0x07.5 
+....................  
+.................... #BYTE TRISA = 0x85 
+.................... #BIT TA0 = 0x85.0 
+.................... #BIT TA1 = 0x85.1 
+.................... #BIT TA2 = 0x85.2 
+....................  
+.................... #BYTE TRISC = 0x87 
+.................... #BIT TC0 = 0x87.0 
+.................... #BIT TC1 = 0x87.1 
+.................... #BIT TC2 = 0x87.2 
+.................... #BIT TC3 = 0x87.3 
+.................... #BIT TC4 = 0x87.4 
+.................... #BIT TC5 = 0x87.5 
+....................  
+.................... //........variable......................................... 
+....................  
+.................... volatile unsigned int16 timer0_var =0; 
+.................... volatile char pulse_count; 
+.................... //volatile unsigned int16 pulse_buff; 
+....................  
+....................  
+.................... //---------------------------------------------------------- 
+.................... //...........macro......................................... 
+.................... // 
+.................... void enable_timer1(void); 
+.................... void disable_timer1(void); 
+....................  
+.................... void IDLE_MODE(void); 
+.................... void OFF_MODE(void); 
+.................... void ACTIVE_MODE(void); 
+.................... void wait(unsigned int16 k); 
+....................  
+.................... // 
+.................... //---------------------------------------------------------- 
+.................... //---------interrupt handle funtion------------------------- 
+.................... #int_EXT 
+.................... void  EXT_isr(void)  
+.................... { 
+*
+0047:  CLRF   34
+0048:  CLRF   33
+.................... unsigned int16 pulse_buff =0; 
+.................... pulse_buff = get_timer1(); 
+0049:  MOVF   0F,W
+004A:  MOVWF  23
+004B:  MOVF   0E,W
+004C:  MOVWF  20
+004D:  MOVF   0F,W
+004E:  SUBWF  23,W
+004F:  BTFSS  03.2
+0050:  GOTO   049
+0051:  MOVF   20,W
+0052:  MOVWF  33
+0053:  MOVF   23,W
+0054:  MOVWF  34
+.................... //printf("\r\n %lu \t\t %d \r\n",pulse_buff,pulse_count); 
+.................... if(pulse_count == 0) 
+0055:  MOVF   2F,F
+0056:  BTFSS  03.2
+0057:  GOTO   05E
+....................    { 
+....................    enable_timer1(); 
+.................... //   enable_interrupts(INT_TIMER1); 
+....................    pulse_count++; 
+*
+005C:  INCF   2F,F
+....................    } 
+.................... else 
+005D:  GOTO   073
+....................    { 
+....................    if(pulse_buff < MIN_PULSE_WIDTH) 
+005E:  MOVF   34,W
+005F:  SUBLW  04
+0060:  BTFSS  03.0
+0061:  GOTO   072
+0062:  BTFSS  03.2
+0063:  GOTO   068
+0064:  MOVF   33,W
+0065:  SUBLW  E1
+0066:  BTFSS  03.0
+0067:  GOTO   072
+....................       { 
+....................        if(pulse_count>FILTER_VALUE)  
+0068:  MOVF   2F,W
+0069:  SUBLW  09
+006A:  BTFSC  03.0
+006B:  GOTO   070
+....................          { 
+....................          printf("a"); 
+006C:  MOVLW  61
+006D:  BTFSS  0C.1
+006E:  GOTO   06D
+006F:  MOVWF  15
+....................          } 
+....................  //    printf("\r\n %lu \t\t %d \r\n",pulse_buff,pulse_count); 
+....................       IDLE_MODE(); 
+0070:  CALL   03F
+....................       } 
+....................    else  
+0071:  GOTO   073
+....................       { 
+....................       pulse_count++ ; 
+0072:  INCF   2F,F
+....................       } 
+....................    } 
+.................... } 
+0073:  BCF    0B.1
+0074:  BCF    0A.3
+0075:  GOTO   028
+.................... #INT_TIMER0 
+.................... void TIMER0_handle(void) 
+.................... { 
+....................    timer0_var++; 
+0076:  INCF   2D,F
+0077:  BTFSC  03.2
+0078:  INCF   2E,F
+....................    if(timer0_var == PULSE_ACTIVE)  
+0079:  MOVF   2D,W
+007A:  SUBLW  14
+007B:  BTFSS  03.2
+007C:  GOTO   08C
+007D:  MOVF   2E,F
+007E:  BTFSS  03.2
+007F:  GOTO   08C
+....................    { 
+....................    //process of off mode  
+....................    OFF_MODE(); 
+....................    } 
+....................    else if(timer0_var == PULSE_OFF) 
+*
+008B:  GOTO   0AC
+008C:  MOVF   2D,W
+008D:  SUBLW  28
+008E:  BTFSS  03.2
+008F:  GOTO   0AC
+0090:  MOVF   2E,F
+0091:  BTFSS  03.2
+0092:  GOTO   0AC
+....................    { 
+....................    //process of active mode 
+....................    timer0_var = 0; 
+0093:  CLRF   2E
+0094:  CLRF   2D
+....................    ACTIVE_MODE(); 
+....................    } 
+.................... } 
+....................  
+.................... //!#INT_TIMER1 
+.................... //!void TIMER1_handle(void) 
+.................... //!{ 
+.................... //!if(pulse_count>FILTER_VALUE)  
+.................... //!   { 
+.................... //!   printf("W"); 
+.................... //!   IDLE_MODE(); 
+.................... //!   } 
+.................... //!} 
+....................  
+....................  
+*
+00AC:  BCF    0B.2
+00AD:  BCF    0A.3
+00AE:  GOTO   028
+.................... #int_RDA 
+.................... void  RDA_isr(void)  
+.................... { 
+....................    int8 value; 
+....................    value = getc(); 
+00AF:  BTFSS  0C.5
+00B0:  GOTO   0AF
+00B1:  MOVF   14,W
+00B2:  MOVWF  33
+....................    putc('R'); 
+00B3:  MOVLW  52
+00B4:  BTFSS  0C.1
+00B5:  GOTO   0B4
+00B6:  MOVWF  15
+.................... } 
+....................  
+....................  
+00B7:  BCF    0C.5
+00B8:  BCF    0A.3
+00B9:  GOTO   028
+.................... void main() 
+.................... { 
+*
+0119:  CLRF   04
+011A:  BCF    03.7
+011B:  MOVLW  1F
+011C:  ANDWF  03,F
+011D:  BCF    11.3
+011E:  MOVLW  19
+011F:  MOVWF  13
+0120:  MOVLW  A6
+0121:  MOVWF  16
+0122:  MOVLW  90
+0123:  MOVWF  17
+0124:  CLRF   2E
+0125:  CLRF   2D
+0126:  BCF    1F.6
+0127:  MOVLW  00
+0128:  BSF    03.5
+0129:  MOVWF  11
+012A:  BCF    03.5
+012B:  CLRF   1A
+012C:  MOVLW  07
+012D:  MOVWF  19
+....................    setup_comparator(NC_NC_NC_NC);// This device COMP currently not supported by the PICWizard 
+012E:  CLRF   1A
+012F:  MOVLW  07
+0130:  MOVWF  19
+0131:  BSF    03.5
+0132:  MOVF   05,W
+0133:  MOVWF  05
+0134:  MOVLW  06
+0135:  BCF    03.5
+0136:  MOVWF  20
+0137:  DECFSZ 20,F
+0138:  GOTO   137
+0139:  NOP
+013A:  MOVF   19,W
+013B:  BCF    0C.3
+....................   // enable_interrupts(INT_EXT); 
+....................    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256); //32.7 ms overflow 
+013C:  BSF    03.5
+013D:  MOVF   01,W
+013E:  ANDLW  C0
+013F:  IORLW  07
+0140:  MOVWF  01
+....................    enable_interrupts(INT_TIMER0); 
+0141:  BCF    03.5
+0142:  BSF    0B.5
+....................    enable_interrupts(INT_RDA); 
+0143:  BSF    03.5
+0144:  BSF    0C.5
+....................    //enable_interrupts(INT_TIMER1); 
+....................    enable_interrupts(GLOBAL); 
+0145:  MOVLW  C0
+0146:  BCF    03.5
+0147:  IORWF  0B,F
+....................    
+....................  //  setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);//128ms overflow 
+....................  
+....................    ext_int_edge( H_TO_L );   // Sets up EXT 
+0148:  BSF    03.5
+0149:  BCF    01.6
+....................    setup_timer_1 (T1_DISABLED ); 
+014A:  BCF    03.5
+014B:  CLRF   10
+....................    printf("NguyenHung \n \r DT5 - K53 - DHBKHN \n \r"); 
+014C:  MOVLW  BA
+014D:  BSF    03.5
+014E:  MOVWF  1B
+014F:  MOVLW  00
+0150:  MOVWF  18
+0151:  BCF    03.5
+0152:  CALL   0D7
+....................    printf("Ready to use !! \n\r "); 
+0153:  MOVLW  CD
+0154:  BSF    03.5
+0155:  MOVWF  1B
+0156:  MOVLW  00
+0157:  MOVWF  18
+0158:  BCF    03.5
+0159:  CALL   0D7
+....................    TC3 = 0; 
+015A:  BSF    03.5
+015B:  BCF    07.3
+....................    RC3 = 1; 
+015C:  BCF    03.5
+015D:  BSF    07.3
+....................  
+.................... while(true) 
+....................    { 
+....................    if(get_timer1() > MAX_PULSE_WIDTH) 
+015E:  MOVF   0F,W
+015F:  MOVWF  23
+0160:  MOVF   0E,W
+0161:  MOVWF  20
+0162:  MOVF   0F,W
+0163:  SUBWF  23,W
+0164:  BTFSS  03.2
+0165:  GOTO   15E
+0166:  MOVF   20,W
+0167:  MOVWF  30
+0168:  MOVF   23,W
+0169:  MOVWF  31
+016A:  MOVF   31,W
+016B:  SUBLW  2F
+016C:  BTFSC  03.0
+016D:  GOTO   17E
+016E:  XORLW  FF
+016F:  BTFSS  03.2
+0170:  GOTO   175
+0171:  MOVF   30,W
+0172:  SUBLW  D4
+0173:  BTFSC  03.0
+0174:  GOTO   17E
+....................       { 
+....................          if(pulse_count>FILTER_VALUE)  
+0175:  MOVF   2F,W
+0176:  SUBLW  09
+0177:  BTFSC  03.0
+0178:  GOTO   17E
+....................          { 
+....................             printf("W"); 
+0179:  MOVLW  57
+017A:  BTFSS  0C.1
+017B:  GOTO   17A
+017C:  MOVWF  15
+....................             IDLE_MODE(); 
+017D:  CALL   03F
+....................          } 
+....................       } 
+....................     } 
+017E:  GOTO   15E
+.................... } 
+....................  
+.................... //------------------------------------------------------------- 
+.................... void enable_timer1(void) 
+.................... { 
+017F:  SLEEP
+....................    setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);      //262 ms overflow 
+*
+0058:  MOVLW  35
+0059:  MOVWF  10
+....................    set_timer1(0);                               //this sets timer1 register to 0 
+005A:  CLRF   0F
+005B:  CLRF   0E
+.................... } 
+....................  
+.................... void disable_timer1(void) 
+.................... { 
+....................    set_timer1(0);  
+*
+0080:  CLRF   0F
+0081:  CLRF   0E
+....................    setup_timer_1 ( T1_DISABLED ); 
+0082:  CLRF   10
+.................... } 
+.................... void IDLE_MODE(void) 
+.................... { 
+....................    disable_interrupts(INT_TIMER1); 
+*
+003F:  BSF    03.5
+0040:  BCF    0C.0
+.................... //   disable_timer1(); 
+....................    set_timer1(0);  
+0041:  BCF    03.5
+0042:  CLRF   0F
+0043:  CLRF   0E
+....................    setup_timer_1 ( T1_DISABLED ); 
+0044:  CLRF   10
+....................    pulse_count =0; 
+0045:  CLRF   2F
+....................   // pulse_buff =0; 
+.................... } 
+0046:  RETURN
+.................... void OFF_MODE(void) 
+.................... { 
+....................    disable_timer1 (); 
+....................    disable_interrupts(INT_TIMER1); 
+*
+0083:  BSF    03.5
+0084:  BCF    0C.0
+....................    disable_interrupts(INT_EXT); 
+0085:  BCF    03.5
+0086:  BCF    0B.4
+....................     
+....................    set_timer1(0); 
+0087:  CLRF   0F
+0088:  CLRF   0E
+....................    pulse_count =0; 
+0089:  CLRF   2F
+....................  
+....................    RC3 =0 ; 
+008A:  BCF    07.3
+....................    } 
+.................... void ACTIVE_MODE(void) 
+.................... { 
+....................    disable_interrupts(INT_TIMER0); 
+*
+0095:  BCF    0B.5
+....................    RC3 =1 ; 
+0096:  BSF    07.3
+....................    wait(0x100);// so luyen: 01686269854 
+0097:  MOVLW  01
+0098:  MOVWF  34
+0099:  CLRF   33
+.................... //   wait(0xffff); 
+....................    set_timer0(0); 
+*
+00A3:  CLRF   01
+....................    enable_interrupts(INT_TIMER0); 
+00A4:  BSF    0B.5
+....................    set_timer1(0); 
+00A5:  CLRF   0F
+00A6:  CLRF   0E
+....................    enable_interrupts(INT_EXT); 
+00A7:  BSF    0B.4
+....................    ext_int_edge( H_TO_L );   // higt to low 
+00A8:  BSF    03.5
+00A9:  BCF    01.6
+....................    pulse_count =0; 
+00AA:  BCF    03.5
+00AB:  CLRF   2F
+....................    } 
+.................... void wait(unsigned int16 k) 
+.................... { 
+.................... while(k--); 
+*
+009A:  MOVF   34,W
+009B:  MOVWF  23
+009C:  MOVF   33,W
+009D:  BTFSC  03.2
+009E:  DECF   34,F
+009F:  DECF   33,F
+00A0:  IORWF  23,W
+00A1:  BTFSS  03.2
+00A2:  GOTO   09A
+.................... } 
+
+Configuration Fuses:
+   Word  1: 3CF2   HS NOPROTECT NOBROWNOUT MCLR NOCPD NOWDT NOPUT IESO FCMEN

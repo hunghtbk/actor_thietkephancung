@@ -1,0 +1,108 @@
+CCS PCM C Compiler, Version 4.107, 42851               07-Nov-12 17:59
+
+               Filename: D:\data\code\CodeMW\test\main.lst
+
+               ROM used: 54 words (1%)
+                         Largest free fragment is 2048
+               RAM used: 5 (2%) at main() level
+                         5 (2%) worst case
+               Stack:    0 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include "main.h" 
+.................... #include <16F688.h> 
+.................... //////// Standard Header file for the PIC16F688 device //////////////// 
+.................... #device PIC16F688 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES HS                    	//High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPROTECT             	//Code not protected from reading 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES MCLR                  	//Master Clear pin enabled 
+.................... #FUSES NOCPD                 	//No EE protection 
+.................... #FUSES NOPUT                 	//No Power Up Timer 
+.................... #FUSES IESO                  	//Internal External Switch Over mode enabled 
+.................... #FUSES FCMEN                 	//Fail-safe clock monitor enabled 
+....................  
+.................... #use delay(clock=12000000) 
+.................... #use rs232(baud=19200,parity=N,xmit=PIN_C2,rcv=PIN_C1,bits=5) 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... void main() 
+.................... { 
+0004:  CLRF   04
+0005:  BCF    03.7
+0006:  MOVLW  1F
+0007:  ANDWF  03,F
+0008:  BSF    03.5
+0009:  BCF    07.2
+000A:  BCF    03.5
+000B:  BSF    07.2
+000C:  BCF    1F.6
+000D:  MOVLW  00
+000E:  BSF    03.5
+000F:  MOVWF  11
+0010:  BCF    03.5
+0011:  CLRF   1A
+0012:  MOVLW  07
+0013:  MOVWF  19
+....................  
+....................    setup_adc_ports(NO_ANALOGS|VSS_VDD); 
+0014:  BCF    1F.6
+0015:  MOVLW  00
+0016:  BSF    03.5
+0017:  MOVWF  11
+....................    setup_adc(ADC_CLOCK_DIV_2); 
+0018:  BCF    1F.4
+0019:  BCF    1F.5
+001A:  BCF    1F.6
+001B:  BCF    03.5
+001C:  BCF    1F.7
+001D:  BSF    1F.0
+....................    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1); 
+001E:  BSF    03.5
+001F:  MOVF   01,W
+0020:  ANDLW  C7
+0021:  IORLW  08
+0022:  MOVWF  01
+....................    setup_timer_1(T1_DISABLED); 
+0023:  BCF    03.5
+0024:  CLRF   10
+.................... //   setup_ccp1(CCP_OFF); 
+....................    setup_comparator(NC_NC_NC_NC); 
+0025:  CLRF   1A
+0026:  MOVLW  07
+0027:  MOVWF  19
+0028:  BSF    03.5
+0029:  MOVF   05,W
+002A:  MOVWF  05
+002B:  MOVLW  09
+002C:  BCF    03.5
+002D:  MOVWF  20
+002E:  DECFSZ 20,F
+002F:  GOTO   02E
+0030:  GOTO   031
+0031:  MOVF   19,W
+0032:  BCF    0C.3
+....................    setup_vref(FALSE); 
+0033:  BSF    03.5
+0034:  CLRF   19
+....................  
+....................    //TODO: User Code 
+....................  
+.................... } 
+0035:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3CF2   HS NOPROTECT NOBROWNOUT MCLR NOCPD NOWDT NOPUT IESO FCMEN

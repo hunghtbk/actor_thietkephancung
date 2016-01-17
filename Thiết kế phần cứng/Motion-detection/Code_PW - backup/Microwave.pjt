@@ -1,0 +1,27 @@
+[PROJECT]
+Target=.\Microwave.hex
+Development_Mode=
+Processor_Text=PIC16F688
+ToolSuite=CCS
+Processor=0x6688
+[.\Microwave]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=.\Microwave.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=.\Microwave
+[Opened Files]
+1=.\Microwave.c
+2=..\..\..\code\CodeMW - V2.00\Microwave.c
+3=Microwave.h
+4=C:\Program Files\PICC\devices\16F688.h
+5=

@@ -1,0 +1,19 @@
+#include "main.h"
+
+
+
+
+void main()
+{
+
+   setup_adc_ports(NO_ANALOGS|VSS_VDD);
+   setup_adc(ADC_CLOCK_DIV_2);
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1);
+   setup_timer_1(T1_DISABLED);
+   setup_ccp1(CCP_OFF);
+   setup_comparator(NC_NC_NC_NC);
+   setup_vref(FALSE);
+
+   //TODO: User Code
+
+}

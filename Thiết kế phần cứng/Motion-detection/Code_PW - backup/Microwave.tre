@@ -1,0 +1,15 @@
+ÀÄMicrowave
+   ÃÄMAIN  0/103  Ram=2
+   ³  ÃÄ??0??
+   ³  ÃÄ@PSTRINGC7_19200_60_61  0/66  Ram=3
+   ³  ÃÄ@PSTRINGC7_19200_60_61  0/66  Ram=3
+   ³  ÀÄIDLE_MODE  0/8  Ram=0
+   ÃÄEXT_isr  0/47  Ram=2
+   ³  ÃÄenable_timer1  (Inline)  Ram=0
+   ³  ÀÄIDLE_MODE  0/8  Ram=0
+   ÃÄTIMER0_handle  0/57  Ram=0
+   ³  ÃÄOFF_MODE  (Inline)  Ram=0
+   ³  ³  ÀÄdisable_timer1  (Inline)  Ram=0
+   ³  ÀÄACTIVE_MODE  (Inline)  Ram=0
+   ³     ÀÄwait  (Inline)  Ram=2
+   ÀÄRDA_isr  0/11  Ram=1

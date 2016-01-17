@@ -1,0 +1,26 @@
+[PROJECT]
+Target=D:\data\lab\Motion-detection\Code\Microwave.hex
+Development_Mode=
+Processor_Text=PIC16F1936
+ToolSuite=CCS
+Processor=0x1936
+[D:\data\lab\Motion-detection\Code\Microwave]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=D:\data\lab\Motion-detection\Code\Microwave.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=D:\data\lab\Motion-detection\Code\Microwave
+[Opened Files]
+1=Microwave.c
+2=
+3=
+4=

@@ -1,0 +1,14 @@
+Change Component Designator: OldDesignator=GND1 NewDesignator=GND
+Change Component Designator: OldDesignator=JP1 NewDesignator=PROGRAMER
+Change Component Designator: OldDesignator=JP2 NewDesignator=UART
+Change Component Designator: OldDesignator=SIGOUT1 NewDesignator=SIG
+Change Component Designator: OldDesignator=Vin1 NewDesignator=Vin
+Change Net Name : Old Net Name=NetJP1_4 New Net Name=NetPIC1_13
+Change Net Name : Old Net Name=NetJP1_5 New Net Name=NetPIC1_12
+Change Net Name : Old Net Name=NetJP2_2 New Net Name=NetPIC1_6
+Change Net Name : Old Net Name=NetJP2_3 New Net Name=NetPIC1_5
+Added Member To Class: ClassName=Microwave Member=Component GND 1
+Added Member To Class: ClassName=Microwave Member=Component PROGRAMER JP5
+Added Member To Class: ClassName=Microwave Member=Component SIG JP2
+Added Member To Class: ClassName=Microwave Member=Component UART JP3
+Added Member To Class: ClassName=Microwave Member=Component Vin 1

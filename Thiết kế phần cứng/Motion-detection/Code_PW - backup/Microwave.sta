@@ -1,0 +1,57 @@
+
+ROM used: 384 (9%)
+          384 (9%) including unused fragments
+
+          1 Average locations per line
+          6 Average locations per statement
+
+RAM used: 19 (7%) at main() level
+          22 (9%) worst case
+
+Stack used: 3 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  230    68 100  Microwave.c
+   16     0   0  Microwave.h
+  277     0   0  C:\Program Files\PICC\devices\16F688.h
+----- -----
+  523    68 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     47  12   2   260  4.3  EXT_isr
+0     57  15   0   125  3.3  TIMER0_handle
+0     11   3   1    56  1.6  RDA_isr
+0    103  27   2   388  3.6  MAIN
+0     19   5   0             @const100
+0     66  17   3             @PSTRINGC7_19200_60_61
+0     10   3   0             @const102
+ Inline        0    47  1.5  enable_timer1
+ Inline        0    37  1.1  disable_timer1
+0      8   2   0    74  1.6  IDLE_MODE
+ Inline        0   108  1.7  OFF_MODE
+ Inline        0   181  1.8  ACTIVE_MODE
+ Inline        2    33  2.0  wait
+
+Program metrics:
+    Functions               10
+    Statements              68
+    Comments                171
+    Volume (V)              2186
+    Difficilty (D)          22.6
+    Effort to implement (E) 49323
+    Time to implement (T)   46 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   7
+    Maintainability (MI)    118
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0003E    59  0  
+0003F-007FF   321  1664  
+00800-00FFF     0  2048  
+
+
+

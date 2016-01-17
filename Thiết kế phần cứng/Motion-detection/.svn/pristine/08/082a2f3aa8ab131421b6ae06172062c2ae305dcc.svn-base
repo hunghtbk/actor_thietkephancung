@@ -1,0 +1,50 @@
+Change Component Footprint: Designator=C2 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C3 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C4 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C8 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C12 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C13 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C14 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C18 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C19 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C20 Old Footprint=CN2 New Footprint=SM-0805
+Change Component Footprint: Designator=C1 Old Footprint=CP1/2 New Footprint=CP1/2.5
+Change Component Footprint: Designator=IC2 Old Footprint=DIP14/W0.3 New Footprint=SO-14
+Change Component Footprint: Designator=R1 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R2 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R3 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R4 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R5 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R6 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R7 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R8 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R9 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R10 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R11 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R12 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R13 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R14 Old Footprint=SM-1206 New Footprint=SM-0805
+Change Component Footprint: Designator=R15 Old Footprint=SM-1206 New Footprint=SM-0805
+Added Component: Designator=PIC1(SO-14)
+Added Component: Designator=U1(HB100_SENSOR)
+Added Pin To Net: NetName=VCC Pin=PIC1-1
+Added Pin To Net: NetName=NetC6_2 Pin=PIC1-2
+Added Pin To Net: NetName=NetC7_2 Pin=PIC1-3
+Added Pin To Net: NetName=VPP Pin=PIC1-4
+Added Pin To Net: NetName=NetJP2_3 Pin=PIC1-5
+Added Pin To Net: NetName=NetJP2_2 Pin=PIC1-6
+Added Pin To Net: NetName=CTRL Pin=PIC1-7
+Added Pin To Net: NetName=OUT Pin=PIC1-11
+Added Pin To Net: NetName=NetJP1_5 Pin=PIC1-12
+Added Pin To Net: NetName=NetJP1_4 Pin=PIC1-13
+Added Pin To Net: NetName=GND Pin=PIC1-14
+Added Pin To Net: NetName=NetC4_2 Pin=U1-1
+Added Pin To Net: NetName=NetC4_2 Pin=U1-2
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Pin To Net: NetName=GND Pin=U1-5
+Added Pin To Net: NetName=GND Pin=U1-6
+Added Pin To Net: NetName=NetQ2_2 Pin=U1-7
+Added Pin To Net: NetName=NetQ2_2 Pin=U1-8
+Added Member To Class: ClassName=Microwave Member=Component PIC1 PIC16F688
+Added Member To Class: ClassName=Microwave Member=Component U1 HB100

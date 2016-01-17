@@ -1,0 +1,6 @@
+Added Component: Designator=GND(TP)
+Added Component: Designator=Vin(TP)
+Added Pin To Net: NetName=GND Pin=GND-TP1
+Added Pin To Net: NetName=NetC2_2 Pin=Vin-TP1
+Added Member To Class: ClassName=Microwave Member=Component GND 1
+Added Member To Class: ClassName=Microwave Member=Component Vin 1

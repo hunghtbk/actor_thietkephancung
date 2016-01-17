@@ -1,0 +1,102 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+005.0   RA0
+005     PORTA
+005.1   RA1
+005.2   RA2
+007.0   RC0
+007     PORTC
+007.1   RC1
+007.2   RC2
+007.3   RC3
+007.4   RC4
+007.5   RC5
+019.6   C1OUT
+019.7   C2OUT
+020     @SCRATCH
+021     @SCRATCH
+021     _RETURN_
+022     @SCRATCH
+023     @SCRATCH
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @INTERRUPT_AREA
+02A     @INTERRUPT_AREA
+02B     @INTERRUPT_AREA
+02C     @INTERRUPT_AREA
+02D-02E timer0_var
+02F     pulse_count
+030-033 pulse_sum
+034     led_count
+035     MAIN.@SCRATCH1
+036     MAIN.@SCRATCH2
+037     @DIV88.P1
+037-038 EXT_isr.pulse_buff
+037-038 wait.k
+037     RDA_isr.value
+037     TIMER0_handle.@SCRATCH1
+038     @DIV88.P1
+039     @DIV88.@SCRATCH1
+085     TRISA
+085.0   TA0
+085.1   TA1
+085.2   TA2
+087.0   TC0
+087     TRISC
+087.1   TC1
+087.2   TC2
+087.3   TC3
+087.4   TC4
+087.5   TC5
+09B-09C @READ_PROGRAM_MEMORY8.P1
+
+ROM Allocation:
+0047  EXT_isr
+0084  TIMER0_handle
+008D  @DIV88
+00EA  RDA_isr
+00F5  MAIN
+0058  enable_timer1
+00BB  disable_timer1
+003F  IDLE_MODE
+00BB  OFF_MODE
+00D0  ACTIVE_MODE
+00D5  wait
+00F5  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    D:\data\lab\Motion-detection\Code_PW\
+
+Project Files:
+    Microwave.c
+    Microwave.h
+    C:\Program Files\PICC\devices\16F688.h
+
+Units:
+    D:\data\lab\Motion-detection\Code_PW\Microwave (main)
+
+Compiler Settings:
+    Processor:      PIC16F688
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Microwave.err
+    Ext Symbols: Microwave.esym
+    INHX8:       Microwave.hex
+    Symbols:     Microwave.sym
+    List:        Microwave.lst
+    Debug/COFF:  Microwave.cof
+    Project:     Microwave.PJT
+    Call Tree:   Microwave.tre
+    Statistics:  Microwave.sta

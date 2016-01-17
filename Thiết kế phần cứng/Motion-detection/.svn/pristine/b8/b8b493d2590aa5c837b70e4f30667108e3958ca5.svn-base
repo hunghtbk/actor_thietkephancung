@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=VCC Pin=C1-1
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Pin From Net: NetName=GND Pin=C2-1
+Removed Pin From Net: NetName=GND Pin=D1-2
+Removed Pin From Net: NetName=VCC Pin=IC1-3
+Removed Pin From Net: NetName=NetC20_1 Pin=VR3-2
+Removed Pin From Net: NetName=NetC17_1 Pin=VR3-3
+Removed Member From Class: ClassName=Microwave Member=IC1
+Change Component DesignItemId : Designator=C2 Old DesignItemId=CN2 New DesignItemId=CP3
+Change Component DesignItemId : Designator=C3 Old DesignItemId=CN2 New DesignItemId=CP4
+Change Component DesignItemId : Designator=C1 Old DesignItemId=CP1 New DesignItemId=CN2
+Change Component Footprint: Designator=C1 Old Footprint=CP1/2.5 New Footprint=CN2
+Change Component Footprint: Designator=C2 Old Footprint=SM-0805 New Footprint=CP1.5/3.4
+Change Component Footprint: Designator=C3 Old Footprint=SM-0805 New Footprint=CP1.5/3.4
+Change Component Footprint: Designator=VR3 Old Footprint=VR New Footprint=VR1
+Change Component Comment : Designator=C1 Old Comment=10uF New Comment=104
+Change Component Comment : Designator=C2 Old Comment=104 New Comment=100uF/35V
+Change Component Comment : Designator=C3 Old Comment=104 New Comment=1000uF/16V
+Change Component Designator: OldDesignator=+ NewDesignator=Vin
+Change Component Designator: OldDesignator=- NewDesignator=GND
+Added Component: Designator=L1(L/0.4)
+Added Component: Designator=R16(SM-1206)
+Added Component: Designator=U2(936A-02)
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=VCC Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=D1-1
+Added Pin To Net: NetName=VCC Pin=L1-2
+Added Pin To Net: NetName=NetC17_1 Pin=R16-1
+Added Pin To Net: NetName=NetC20_1 Pin=R16-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-5
+Added Pin To Net: NetName=GND Pin=U2-6
+Added Pin To Net: NetName=VCC Pin=VR3-1
+Added Pin To Net: NetName=GND Pin=VR3-3
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=U2-1
+Added Pin To Net: NetName=NetC2_1 Pin=Vin-TP1
+Added Net: Name=NetC2_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=L1-1
+Added Pin To Net: NetName=NetD1_2 Pin=U2-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetU2_4 Pin=U2-4
+Added Pin To Net: NetName=NetU2_4 Pin=VR3-2
+Added Net: Name=NetU2_4
+Added Member To Class: ClassName=Microwave Member=Component L1 150mH
+Added Member To Class: ClassName=Microwave Member=Component R16 1k
+Added Member To Class: ClassName=Microwave Member=Component U2 LM2576D2T-ADJ

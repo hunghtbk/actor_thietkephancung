@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=Microwave Member=+
+Added Component: Designator=VIN(TP)
+Added Pin To Net: NetName=NetC2_1 Pin=VIN-TP1
+Added Member To Class: ClassName=Microwave Member=Component VIN 1

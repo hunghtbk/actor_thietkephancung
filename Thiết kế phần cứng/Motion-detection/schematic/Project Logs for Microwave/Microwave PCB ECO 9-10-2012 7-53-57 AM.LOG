@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=+ NewDesignator=Vin
+Change Component Designator: OldDesignator=- NewDesignator=GND
+Added Pin To Net: NetName=NetC2_1 Pin=Vin-TP1
+Added Member To Class: ClassName=Microwave Member=Component Vin 1

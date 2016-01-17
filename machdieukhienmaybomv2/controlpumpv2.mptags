@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+ACK::1	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	44;"	d	line:44	file:
+BAUD_RATE::19200	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	4;"	d	line:4
+BYTE	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	4;"	t	line:4
+CLOCK_FREQ::4000000	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	3;"	d	line:3
+CharacterArray	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	51;"	v	line:51
+ConsoleInit	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	3;"	f	line:3	signature:(void)
+ConsoleInit	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	20;"	p	line:20	signature:(void)
+ConsoleIsPutReady::(TXSTAbits.TRMT)	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	8;"	d	line:8
+ConsolePut	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	28;"	f	line:28	signature:(BYTE c)
+ConsolePut	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	22;"	p	line:22	signature:(BYTE c)
+ConsolePutROMString	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	35;"	f	line:35	signature:(ROM char* str)
+ConsolePutROMString	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	23;"	p	line:23	signature:(ROM char* str)
+DATA_RD::PORTCbits.RC4	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	39;"	d	line:39
+DATA_TRIS::TRISCbits.TRISC4	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	41;"	d	line:41
+DATA_WR::LATCbits.LATC4	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	38;"	d	line:38
+DWORD	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	6;"	t	line:6
+DelayMs	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\delay.c	11;"	f	line:11	signature:(unsigned char cnt)
+DelayMs	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\delay.h	34;"	p	line:34	signature:(unsigned char)
+DelayUs::(x){unsignedchar_dcnt;	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\delay.h	25;"	d	line:25
+DelayUs::(x){unsignedchar_dcnt;	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\delay.h	31;"	d	line:31
+GetHumiTempFlag	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	33;"	v	line:33
+HUMI::1	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	53;"	d	line:53
+HighVector	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	91;"	f	line:91	signature:(void)
+Humidity	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	15;"	m	line:15	struct:_MESSAGE::<anonymous>
+InitSystem	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	39;"	p	line:39	file:	signature:(void)
+LSB	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	68;"	l	line:68
+LoadSHT10	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	40;"	p	line:40	file:	signature:(void)
+MEASURE_HUMI::0x05	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	40;"	d	line:40	file:
+MEASURE_TEMP::0x03	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	39;"	d	line:39	file:
+MESSAGE	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	19;"	t	line:19
+MSB	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	68;"	l	line:68
+PRINT_VAR	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	55;"	l	line:55
+PrintChar	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	53;"	f	line:53	signature:(BYTE toPrint)
+PrintChar	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	24;"	p	line:24	signature:(BYTE)
+PrintDWord	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	75;"	f	line:75	signature:(DWORD toPrint)
+PrintDWord	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	26;"	p	line:26	signature:(DWORD toPrint)
+PrintWord	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	66;"	f	line:66	signature:(WORD toPrint)
+PrintWord	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	25;"	p	line:25	signature:(WORD)
+RESET_SHT::0x1e	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	41;"	d	line:41	file:
+ROM::rom	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	21;"	d	line:21
+SCK::LATCbits.LATC3	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	40;"	d	line:40
+SCK_TRIS::TRISCbits.TRISC3	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	42;"	d	line:42
+SHT1X_H	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	28;"	d	line:28
+SPBRG_VAL::(((CLOCK_FREQ/BAUD_RATE)/16)-1	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	13;"	d	line:13
+SPBRG_VAL::(((CLOCK_FREQ/BAUD_RATE)/64)-1	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	11;"	d	line:11
+STATUS_REG_R::0x07	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	38;"	d	line:38	file:
+STATUS_REG_W::0x06	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	37;"	d	line:37	file:
+TEMP::0	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	52;"	d	line:52
+Temperature	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	16;"	m	line:16	struct:_MESSAGE::<anonymous>
+UARTRx_ISR	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	38;"	p	line:38	file:	signature:(void)
+USART_USE_BRGH_HIGH	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	7;"	d	line:7
+USE_DEBUG	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	22;"	d	line:22
+WORD	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	5;"	t	line:5
+XTAL_FREQ::4	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\delay.h	17;"	d	line:17
+_MESSAGE	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	9;"	u	line:9
+c	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	37;"	l	line:37
+command	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	32;"	v	line:32
+config1H	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	9;"	v	line:9
+config2H	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	15;"	v	line:15
+config2L	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	12;"	v	line:12
+config3H	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	18;"	v	line:18
+config4L	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	22;"	v	line:22
+data	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	17;"	m	line:17	union:_MESSAGE
+error	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	225;"	l	line:225
+error	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	61;"	l	line:61
+error	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	84;"	l	line:84
+humidity	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	30;"	v	line:30
+i	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	157;"	l	line:157
+i	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	188;"	l	line:188
+i	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	225;"	l	line:225
+i	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	85;"	l	line:85
+main	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	43;"	f	line:43	signature:(void)
+msg	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	11;"	m	line:11	union:_MESSAGE
+msg	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	31;"	v	line:31
+noACK::0	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	43;"	d	line:43	file:
+printf::(x)ConsolePutROMString((ROMcha	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.h	27;"	d	line:27
+s_connectionreset	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	155;"	f	line:155	signature:(void)
+s_connectionreset	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	73;"	p	line:73	signature:(void)
+s_measure	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	82;"	f	line:82	signature:(BYTE *p_value, BYTE *p_checksum, BYTE mode)
+s_measure	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	61;"	p	line:61	signature:(BYTE *p_value, BYTE *p_checksum, BYTE mode)
+s_read_byte	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	186;"	f	line:186	signature:(BYTE ack)
+s_read_byte	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	74;"	p	line:74	signature:(BYTE ack)
+s_read_statusreg	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	63;"	p	line:63	signature:(BYTE *p_value, BYTE *p_checksum)
+s_softreset	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	59;"	f	line:59	signature:(void)
+s_softreset	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	60;"	p	line:60	signature:(void)
+s_transstart	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	120;"	f	line:120	signature:(void)
+s_transstart	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	72;"	p	line:72	signature:(void)
+s_write_byte	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	223;"	f	line:223	signature:(BYTE value)
+s_write_byte	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	75;"	p	line:75	signature:(BYTE value)
+s_write_statusreg	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.h	62;"	p	line:62	signature:(BYTE *p_value)
+t0	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	77;"	l	line:77
+t1	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	77;"	l	line:77
+t2	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	77;"	l	line:77
+t3	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\rs485.c	77;"	l	line:77
+temperature	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\control.c	30;"	v	line:30
+v	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\General.h	18;"	m	line:18	union:_MESSAGE
+val	C:\Users\NguyenTienDat\Desktop\machdieukhienmaybomv2\SHT1x.c	188;"	l	line:188
